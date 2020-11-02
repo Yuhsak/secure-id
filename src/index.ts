@@ -19,7 +19,7 @@ const copy = <D extends Uint8Array, S extends any[]>(d: D, s: S) => {
   return d
 }
 
-const randomFillSyncFallback = <T extends Uint8Array>(v: T) => copy(v, [...Array(v.length)].map(_ => Math.floor(Math.random() * 256)))
+const randomFillSyncFallback = <T extends Uint8Array>(v: T) => copy(v, Array(v.length).fill(0).map(_ => Math.floor(Math.random() * 256)))
 
 export const randomFillSync: <T extends Uint8Array>(uInt8Array: T) => T = ((g: any) => {
   if (g.crypto && typeof g.crypto.getRandomValues === 'function') {

@@ -2,6 +2,14 @@
 
 Secure id generator for Browsers, Node.js, and ReactNative written in TypeScript.
 
+## Features
+
+- **Secure**: Generates cryptographically secure random ids using `window.crypto` for Browsers, `require('crypto')` for Node.js, and `react-native-get-random-values` for ReactNative.
+- **Fast**: Much faster than `uuid4`.
+- **Tiny**: Only 612 bytes of gzipped, minified.
+
+> Compatible for es6+
+
 ## Install
 
 ```sh
