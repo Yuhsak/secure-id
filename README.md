@@ -21,17 +21,18 @@ npm install secure-id
 ```ts
 import {create} from 'secure-id
 
-const {generate, validate} = create('abc012')
+// function create(characters: string): (length: number) => string
+const {generate, validate} = create('ab01')(6)
 
-// id -> 'c110ba', 'a21aac', '0cca01' etc.
-const id = generate(6)
+// id -> 'b110ba', 'a01aab', '0bba01' etc.
+const id = generate()
 
 // true
 validate(id)
-validate(id+'a0')
-validate(id+'b1')
-validate(id+'c2')
+validate('aaaaaa')
+validate('01ab00')
 
 // false
-validate(id+'d')
+validate('aaaaa') //invalid length
+validate('aaaaad') //invalid characters
 ```

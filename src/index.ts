@@ -61,15 +61,15 @@ export const random = (bytes: number) => {
 // -, /, \, [, ]
 const escapeRegExp = (source: string) => source.replace(/[\-\/\\\[\]]/g, s => '\\' + s)
 
-export const create = (symbols: string) => {
+export const create = (symbols: string) => (n: number=21) => {
 
   const l = symbols.length
 
-  const regexp = new RegExp('^['+escapeRegExp(symbols)+']+$')
+  const regexp = new RegExp('^['+escapeRegExp(symbols)+']{'+n+'}$')
 
   const validate = (s: string) => regexp.test(s)
 
-  const generate = (n: number=21) => {
+  const generate = () => {
 
     const b = random(n)
 
