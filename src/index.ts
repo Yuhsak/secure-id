@@ -24,7 +24,7 @@ const randomFillSyncFallback = <T extends Uint8Array>(v: T) => copy(v, [...Array
 export const randomFillSync: <T extends Uint8Array>(uInt8Array: T) => T = ((g: any) => {
   if (g.crypto && typeof g.crypto.getRandomValues === 'function') {
     // Browser and ReactNative with 'react-native-get-random-values'
-    return g.crypto.getRandomValues
+    return g.crypto.getRandomValues.bind(g.crypto)
   }
   if (typeof g.require === 'function') {
     try {
