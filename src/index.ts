@@ -11,10 +11,10 @@ const ctx =
         // Any other environment
         : {}
 
-const copy = <D extends Uint8Array, S extends any[]>(d: D, s: S) => {
+const copy = <D extends Uint8Array, S extends number[]>(d: D, s: S) => {
   let i = s.length
   while (i--) {
-    d[i] = Math.floor(Math.random() * 256)
+    d[i] = s[i]
   }
   return d
 }
