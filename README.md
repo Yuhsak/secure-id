@@ -1,5 +1,7 @@
 # secure-id
 
+Secure id generator for Browsers, Node.js, and ReactNative written in TypeScript.
+
 ## Install
 
 ```sh
