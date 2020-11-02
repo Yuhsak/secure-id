@@ -45,8 +45,12 @@ let p: Uint8Array, po: number
 
 export const random = (bytes: number) => {
 
-  if (!p || po === void (0) || bytes > p.length - po) {
-    p = randomFillSync(new Uint8Array(128))
+  if (!p || p.length < bytes) {
+    p = new Uint8Array(bytes * 128)
+    randomFillSync(p)
+    po = 0
+  } else if (bytes > p.length - po) {
+    randomFillSync(p)
     po = 0
   }
 
