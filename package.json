@@ -1,6 +1,6 @@
 {
   "name": "secure-id",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Secure id generator for Browsers, Node.js, and ReactNative written in TypeScript.",
   "author": {
     "name": "Yuhsak Inoue",
